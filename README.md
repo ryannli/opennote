@@ -6,7 +6,7 @@
 
 *Your thoughts, compounded.*
 
-[Quick Start](#quick-start) · [How It Works](#how-it-works) · [Examples](#examples) · [Why Plain Files?](#why-plain-files)
+[Quick Start](#quick-start) · [Usage](#usage) · [How It Works](#how-it-works) · [Examples](#examples) · [Why Plain Files?](#why-plain-files)
 
 </div>
 
@@ -58,18 +58,78 @@ Ask it to brainstorm, and it doesn't start from zero. It draws on everything you
 > Expects [Claude Code](https://docs.anthropic.com/en/docs/claude-code) and [GitHub CLI (`gh`)](https://cli.github.com/) installed.
 
 ```bash
-gh repo fork ryannli/opennote --clone
-cd opennote
+git clone https://github.com/ryannli/opennote.git my-notes
+cd my-notes
 ./setup.sh
 ```
 
-Start capturing:
+Setup will automatically create a **private** GitHub repo for your notes and switch the remote. Your notes never touch a public repo. The original template is kept as `upstream` so you can pull future updates with `git pull upstream main`.
+
+## Usage
+
+### Basic capture
+
+Just tell Claude what you want to remember:
 
 ```bash
 claude "Asymmetry is the whole game when the future is uncertain."
 ```
 
 Or open Claude on your phone and just start talking.
+
+### Skills
+
+OpenNote ships with built-in skills for different types of capture:
+
+**You don't need to remember commands.** Just send your content naturally — AI detects your intent and routes it automatically:
+
+```bash
+note "the best frameworks feel invisible"           # → captured as a note
+note "what if we sold unused SaaS seats"             # → captured as an idea with next steps
+note "finish the API docs by Friday"                 # → captured as a todo
+note "what did I say about marketplaces?"            # → searches your notes
+```
+
+Skills can also be invoked explicitly if you prefer:
+
+| Skill | What it does |
+|-------|-------------|
+| `/dump` | Ultra-fast raw capture — no formatting, no questions asked |
+| `/idea` | Structured idea with **Potential** and **Next Steps** sections |
+| `/todo` | Task capture with optional scheduled reminders |
+| `/reflect` | Periodic reflection that surfaces themes from recent notes |
+| `/search` | Find a half-remembered idea or note by keyword, theme, or date |
+| `/remove` | Delete a note that's outdated or no longer needed |
+
+### Shell aliases
+
+Add these to your `.bashrc` or `.zshrc`:
+
+```bash
+alias note='cd ~/opennote && claude -p'    # one-shot: capture, search, quick actions
+alias notei='cd ~/opennote && claude'      # interactive: multi-turn conversations
+```
+
+**`note`** is one-shot — send a thought, get it captured, done. Perfect for quick capture, search, and todos.
+
+**`notei`** opens an interactive session — use it for multi-turn workflows like `/remove` (which needs confirmation when there are multiple matches), `/reflect`, or exploring your notes in conversation.
+
+```bash
+# One-shot (note)
+note "always bet on simplicity"
+note "remind me to call Alex in 30 minutes"
+note "/search that API thing from last week"
+
+# Interactive (notei)
+notei                          # opens a session
+> delete that note about flossing
+> what patterns do you see in my notes this week?
+> /reflect
+```
+
+### Zero permission prompts
+
+OpenNote includes repo-level permissions (`.claude/settings.json`) so standard capture operations — reading, writing notes, git commit/push — run without any approval prompts. Just send and go.
 
 ## How It Works
 
@@ -81,7 +141,7 @@ You (phone or desktop)          ← the only thing you do
         → GitHub (synced)
 ```
 
-Send a message. That's it. No manual filing, no tagging, no folder management.
+No manual filing, no tagging, no folder management.
 
 ## Examples
 

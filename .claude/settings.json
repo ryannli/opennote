@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Write(notes/*)",
+      "Write(explorations/*)",
+      "Bash(TZ=* date *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git status *)",
+      "Bash(git checkout *)",
+      "Bash(git remote *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(gh repo *)",
+      "Bash(ls *)",
+      "WebFetch"
+    ]
+  }
+}
