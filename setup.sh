@@ -20,7 +20,7 @@ if ! git rev-parse --is-inside-work-tree &> /dev/null; then
   exit 1
 fi
 
-REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner 2>/dev/null || true)
+REPO=$(git remote get-url origin 2>/dev/null | sed 's|.*github.com[:/]||;s|\.git$||' || true)
 
 if [ -z "$REPO" ]; then
   echo "Error: Could not detect GitHub repo. Make sure this repo has a remote."
