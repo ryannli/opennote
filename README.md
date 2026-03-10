@@ -20,6 +20,10 @@ the best interfaces disappear — you forget you're using a tool and just think
 
 Hit send. That's it. Claude handles the rest — organizes it into a markdown file, commits, and pushes to your Git repo. Timestamped, categorized, searchable, and yours forever.
 
+<div align="center">
+<img src="demo-mobile.gif" alt="OpenNote mobile demo" width="300">
+</div>
+
 ## Highlights
 
 - **Capture from anywhere** — Phone, desktop, or CLI. Drop a thought, a screenshot, a URL, or meeting notes. No app to install.
