@@ -2,7 +2,7 @@
 
 ## Config
 
-- **Timezone**: TIMEZONE_PLACEHOLDER
+- **Timezone**: America/Los_Angeles
 
 ## What This Repo Is
 
