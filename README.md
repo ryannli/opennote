@@ -39,13 +39,17 @@ Asymmetry is the whole game when the future is uncertain.
 
 ---
 
-> ### The real power: AI that evolves you
->
-> Most note apps are just storage. OpenNote is different — every note you capture becomes part of AI's understanding of *you*.
->
-> Over weeks and months, your info bank accumulates fragments: a product idea on Monday, a meeting note on Wednesday, a quote that resonated on Friday, a frustration you vented about on Sunday. Individually, they're just notes. But AI can read across all of them — and **surface the hidden threads you'd never notice yourself.**
->
-> Ask it to brainstorm, and it doesn't start from zero. It draws on everything you've ever captured — your interests, your patterns of thinking, your recurring frustrations, your half-formed ideas — and weaves them into insights that feel like they came from your subconscious. *Because in a way, they did.*
+<table><tr><td>
+
+### The real power: AI that evolves you
+
+Most note apps are just storage. OpenNote is different — every note you capture becomes part of AI's understanding of *you*.
+
+Over weeks and months, your info bank accumulates fragments: a product idea on Monday, a meeting note on Wednesday, a quote that resonated on Friday, a frustration you vented about on Sunday. Individually, they're just notes. But AI can read across all of them — and **surface the hidden threads you'd never notice yourself.**
+
+Ask it to brainstorm, and it doesn't start from zero. It draws on everything you've ever captured — your interests, your patterns of thinking, your recurring frustrations, your half-formed ideas — and weaves them into insights that feel like they came from your subconscious. *Because in a way, they did.*
+
+</td></tr></table>
 
 ---
 
